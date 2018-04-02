@@ -55,7 +55,8 @@
 	display: flex;
 	width: 100%;
 	padding-left: 100px;
-	padding-right: 100px;
+	/* padding-right: 100px; */
+	padding-right: 50px;
 }
 
 .INSURANCE_BACKGROUND_COLUMN {
@@ -65,8 +66,19 @@
 }
 
 .DATA {
-	padding: 35px;
+	padding-top: 30px;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-bottom: 15px;
     color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.RESULT {
+	padding-left: 35px;
+	padding-right: 35px;
+	color: gray;
     font-size: 15px;
 }
 
