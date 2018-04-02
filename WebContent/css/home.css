@@ -40,9 +40,13 @@
     border-top-width: 10px;
     border-top-color: #336600;
     padding-top: 10px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     font-size: 20px;
     color: #00BCB0;
+}
+
+.card-text {
+	text-align: center;
 }
 
 .USER_CARD {
@@ -94,6 +98,37 @@
     width: 50px;
     margin-top: 10px;	
 }
+
+#QUOTE {
+	padding-top: 80px;
+    padding-left: 300px;
+}
+
+#QUOTE_BUTTON {
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    /* height: 93px; */
+    height: 75px;
+    left: 0px;
+    letter-spacing: 2.12px;
+    min-height: 0px;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-transform: uppercase;
+    /* width: 392px; */
+    width: 250px;
+    column-rule-color: rgb(255, 255, 255);
+    align-items: normal;
+    perspective-origin: 196px 46.5px;
+    transform-origin: 196px 46.5px;
+    caret-color: rgb(255, 255, 255);
+    background: rgb(124, 91, 244) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(124, 91, 244);
+    border-radius: 105px 105px 105px 105px;
+    font: normal normal 700 normal 25.2px / 27px MarkOT-Font;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#BUTTON_1*/
 
 #ORIGINAL_DIV_3 {
     bottom: 276px;
