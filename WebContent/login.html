@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SafeButler | Better insurance at your fingertips</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<div id="DIV_1">
+	<section id="SECTION_2">
+		<form method="post" action="/auth/login" id="FORM_3">
+			<input type="hidden" id="INPUT_4" name="general-login-redirect" value="None " />
+			<h3 id="H3_5">
+				Agents
+			</h3>
+			<div id="DIV_6">
+				<input id="INPUT_7" name="general-login-email" type="email" placeholder="Your email address" />
+				<input id="INPUT_8" name="general-login-password" type="password" placeholder="Your password" />
+			</div>
+			<a id="A_9"> <span id="SPAN_10">Sign In</span><span id="SPAN_11"></span></a>
+			<input type="submit" id="INPUT_12" />
+			<div id="DIV_18">
+				<p id="P_19">
+				</p>
+			</div>
+		</form>
+		<div id="DIV_20">
+			<h3 id="H3_21">
+				Don't have a SafeButler account?
+			</h3> <a href="/member/register/" id="A_22">Create an account</a>
+			<div id="DIV_25">
+				<h4 id="H4_26">
+					Managing a SafeButler for Individual account? <a href="https://business.hioscar.com/login" id="A_27">Log in here.</a>
+				</h4>
+				<h4 id="H4_28">
+					Are you a Business trying to log in? <a href="https://provider.hioscar.com/login" id="A_29">Log in here.</a>
+				</h4>
+			</div>
+		</div>
+		<script id="SCRIPT_30">oscComponents.push({
+        component: 'osc.view.generalLogin.GeneralLoginForm',
+        options: {
+          'emailValidationURL': '/auth/validate-email'
+        }
+      });
+		</script>
+	</section>
+</div>
+</body>
+</html>
