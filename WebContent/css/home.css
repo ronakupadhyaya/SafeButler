@@ -8,6 +8,7 @@
 }
 
 .USER_MAIN {
+	display: flex;
 }
 
 .USER_NAME {
@@ -47,11 +48,27 @@
 .USER_CARD {
 	padding-top: 50px;
     padding-left: 100px;
+    width: 500px;
 }
 
-.INSURANCE_BACKGROUND {
+.INSURANCE_BACKGROUND_MAIN {
+	display: flex;
+	width: 100%;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
+.INSURANCE_BACKGROUND_COLUMN {
+	flex: 50%;
+    padding: 10px;
+    height: 300px;
+}
+
+.DATA {
+	padding: 35px;
+    color: black;
+    font-size: 15px;
+}
 
 #SEARCH {
 	padding-left: 100px;
