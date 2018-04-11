@@ -5,9 +5,82 @@
 <%
 	ArrayList<User> users = null;
 	User user = null;
+	Integer count = 0;
+	if(session.getAttribute("count") == null) {
+		session.setAttribute("count", count);
+		System.out.println("Here1");
+	}
+	else {
+		count = (Integer) session.getAttribute("count");
+		System.out.println("Here2");
+	}
+	System.out.println("count: " + count);
 	if(request.getAttribute("users") != null) {
 		users = (ArrayList<User>) request.getAttribute("users");
 		if(users.size() == 0) {
+			if(count == 0) {
+				System.out.println("count == 0");
+				user = new User();
+				user.setName("Ronak Upadhyaya");
+				user.setEmail("rdupadhy@usc.edu");
+				user.setAddress("3131 S Hoover St");
+				user.setHouseOrCondo("House");
+				user.setYearBuilt("2017");
+				user.setSquareFootage("1222");
+				user.setRoofType("Asphalt/ fiberglass shingles");
+				user.setConstruction("Concrete");
+				user.setStories("1");
+				user.setSwimmingPool("No");
+				user.setFixtures("Just the basics");
+				user.setDiscounts("Recent home purchase");
+				
+				count++;
+				session.setAttribute("count", count);
+			}
+			else if(count == 1) {
+				user = new User();
+				user.setName("Tom Smith");
+				user.setEmail("tomsmith@usc.edu");
+				user.setAddress("3771 McClintock Ave");
+				user.setHouseOrCondo("Condo");
+				user.setYearBuilt("2016");
+				user.setSquareFootage("1522");
+				user.setRoofType("Asphalt/ fiberglass shingles");
+				user.setConstruction("Concrete");
+				user.setStories("2");
+				user.setSwimmingPool("Yes");
+				user.setFixtures("Just the basics");
+				user.setDiscounts("None");
+				
+				count++;
+				session.setAttribute("count", count);
+			}
+			else if(count == 2) {
+				user = new User();
+				user.setName("William Cooper");
+				user.setEmail("wcooper@usc.edu");
+				user.setAddress("350 De Neve Dr");
+				user.setHouseOrCondo("Condo");
+				user.setYearBuilt("2017");
+				user.setSquareFootage("1000");
+				user.setRoofType("Asphalt/ fiberglass shingles");
+				user.setConstruction("Concrete");
+				user.setStories("1");
+				user.setSwimmingPool("No");
+				user.setFixtures("Just the basics");
+				user.setDiscounts("None");
+				
+				count = 0;
+				session.setAttribute("count", count);
+			}
+		}
+		else {
+			user = users.get(0);	
+		}
+	}
+	else {
+		if(count == 0) {
+			System.out.println("count == 0");
 			user = new User();
 			user.setName("Ronak Upadhyaya");
 			user.setEmail("rdupadhy@usc.edu");
@@ -21,34 +94,69 @@
 			user.setSwimmingPool("No");
 			user.setFixtures("Just the basics");
 			user.setDiscounts("Recent home purchase");
+			
+			count++;
+			session.setAttribute("count", count);
 		}
-		else {
-			user = users.get(0);	
+		else if(count == 1) {
+			user = new User();
+			user.setName("Tom Smith");
+			user.setEmail("tomsmith@usc.edu");
+			user.setAddress("3771 McClintock Ave");
+			user.setHouseOrCondo("Condo");
+			user.setYearBuilt("2016");
+			user.setSquareFootage("1522");
+			user.setRoofType("Asphalt/ fiberglass shingles");
+			user.setConstruction("Concrete");
+			user.setStories("2");
+			user.setSwimmingPool("Yes");
+			user.setFixtures("Just the basics");
+			user.setDiscounts("None");
+			
+			count++;
+			session.setAttribute("count", count);
 		}
-	}
-	else {
-		user = new User();
-		user.setName("Ronak Upadhyaya");
-		user.setEmail("rdupadhy@usc.edu");
-		user.setAddress("3131 S Hoover St");
-		user.setHouseOrCondo("House");
-		user.setYearBuilt("2017");
-		user.setSquareFootage("1222");
-		user.setRoofType("Asphalt/ fiberglass shingles");
-		user.setConstruction("Concrete");
-		user.setStories("1");
-		user.setSwimmingPool("No");
-		user.setFixtures("Just the basics");
-		user.setDiscounts("Recent home purchase");
+		else if(count == 2) {
+			user = new User();
+			user.setName("William Cooper");
+			user.setEmail("wcooper@usc.edu");
+			user.setAddress("350 De Neve Dr");
+			user.setHouseOrCondo("Condo");
+			user.setYearBuilt("2017");
+			user.setSquareFootage("1000");
+			user.setRoofType("Asphalt/ fiberglass shingles");
+			user.setConstruction("Concrete");
+			user.setStories("1");
+			user.setSwimmingPool("No");
+			user.setFixtures("Just the basics");
+			user.setDiscounts("None");
+			
+			count = 0;
+			session.setAttribute("count", count);
+		}
 	}
 %>
    <head>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+      
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>SafeButler | Better insurance at your fingertips</title>
       <link rel="stylesheet" type="text/css" href="css/home.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   	  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  /* $( function() {
+    $( "#dialog" ).dialog();
+  } ); */
+ 
+  </script>
    	  <script>
    	  function showOptions() {
    		window.location.replace("http://localhost:8080/SafeButler/options.html");
@@ -85,6 +193,18 @@
                         <a href="/resources/new-jersey/credentialing/" id="A_100"></a>
                         <div id="DIV_101">
                            Dashboard
+                          <script>
+                           sweetAlert(
+                        		   {
+                        		     title: "A new quote has arrived",
+                        		     text: "",
+                        		     type: "warning",   
+                        		     showCancelButton: true,   
+                        		     confirmButtonColor: "#00BCB0",
+                        		     confirmButtonText: "Start Quote"
+                        		   }
+                        		 );
+                           </script>
                         </div>
                      </div>
                   </li>
@@ -146,6 +266,9 @@
                   <div class="USER_EMAIL">
                      <%= user.getEmail() %>
                   </div>
+                 <!--  <div id="dialog" title="Basic dialog">
+  					<p>A new quote has arrived.</p>
+				 </div> -->
                </div>
                <div class="USER_MAIN">
                   <div class="USER_CARD">
