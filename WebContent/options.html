@@ -6,6 +6,38 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
       <link rel="stylesheet" type="text/css" href="css/options.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+   	  <script>
+   	function onSelect1() {
+ 		  var quote = $('#quote1').text();
+ 		  var coverage = $('#coverage1').text();
+ 		  var extendedReplacement = $('#extendedReplacement1').text();
+ 		  var liability = $('#liability1').text();
+ 		  var personalProperty = $('#personalProperty1').text();
+ 		  var deductible = $('#deductible1').text();
+ 		  console.log("onSelect1", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+ 	  }
+   	
+   	  function onSelect2() {
+   		  var quote = $('#quote2').text();
+   		  var coverage = $('#coverage2').text();
+   		  var extendedReplacement = $('#extendedReplacement2').text();
+   		  var liability = $('#liability2').text();
+   		  var personalProperty = $('#personalProperty2').text();
+   		  var deductible = $('#deductible2').text();
+   		  console.log("onSelect2", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+   	  }
+   	  
+   	function onSelect3() {
+ 		  var quote = $('#quote3').text();
+ 		  var coverage = $('#coverage3').text();
+ 		  var extendedReplacement = $('#extendedReplacement3').text();
+ 		  var liability = $('#liability3').text();
+ 		  var personalProperty = $('#personalProperty3').text();
+ 		  var deductible = $('#deductible3').text();
+ 		  console.log("onSelect3", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+ 	  }
+   	  </script>
    </head>
    <body>
       <div id="ORIGINAL_DIV_3">
@@ -101,10 +133,10 @@
             </div>
             <div id="DIV_91">
                <h1 id="H1_92">
-                  <span id="SPAN_93">$</span> <span contenteditable="true">54 </span> <span id="SPAN_94">/mo</span>
+                  <span id="SPAN_93">$</span> <span id="quote1" contenteditable="true">54 </span> <span id="SPAN_94">/mo</span>
                </h1>
             </div>
-            <button id="BUTTON_95">
+            <button id="BUTTON_95" onclick="onSelect1()">
             Select
             </button>
             <ul id="UL_96">
@@ -115,10 +147,10 @@
                <li id="LI_105">
                   <!-- <span id="SPAN_106"></span>  -->
                   <i style="color: rgb(155, 155, 155);" class="fa fa-home"></i>
-                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span contenteditable="true">135,000</span> </span>
+                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span id="coverage1" contenteditable="true">135,000</span> </span>
                   <!-- ngIf: page.showSurge -->
                   <span id="SPAN_109">
-                     <span id="SPAN_110">+ <span contenteditable="true">25</span> % extended replacement costs</span>
+                     <span id="SPAN_110">+ <span id="extendedReplacement1" contenteditable="true">25</span> % extended replacement costs</span>
                      <!-- <span id="SPAN_111"></span> -->
                   </span>
                   <!-- end ngIf: page.showSurge -->
@@ -126,12 +158,12 @@
                <li id="LI_116">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-wheelchair"></i>
                   <!-- <span id="SPAN_117"></span> -->
-                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span contenteditable="true">100,000</span> </span>
+                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span id="liability1" contenteditable="true">100,000</span> </span>
                </li>
                <li id="LI_120">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-eye"></i>
                   <!-- <span id="SPAN_121"></span>  -->
-                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span contenteditable="true">67,500</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
+                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span id="personalProperty1" contenteditable="true">67,500</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
                </li>
                <li style="padding-top: 15px;">
                   <div id="DIV_132">
@@ -139,7 +171,7 @@
                      <!-- <span id="SPAN_133"></span> -->
                      <span id="SPAN_134">Deductible</span>
                   </div>
-                  <span id="SPAN_135">$ <span contenteditable="true">1,500</span> </span>
+                  <span id="SPAN_135">$ <span id="deductible1" contenteditable="true">1,500</span> </span>
                </li>
             </ul>
          </div>
@@ -155,10 +187,10 @@
             </div>
             <div id="DIV_91">
                <h1 id="H1_92">
-                  <span id="SPAN_93">$</span> <span contenteditable="true">65 </span> <span id="SPAN_94">/mo</span>
+                  <span id="SPAN_93">$</span> <span id="quote2" contenteditable="true">65 </span> <span id="SPAN_94">/mo</span>
                </h1>
             </div>
-            <button id="BUTTON_95">
+            <button id="BUTTON_95" onclick="onSelect2()">
             Select
             </button>
             <ul id="UL_96">
@@ -169,10 +201,10 @@
                <li id="LI_105">
                   <!-- <span id="SPAN_106"></span>  -->
                   <i style="color: rgb(155, 155, 155);" class="fa fa-home"></i>
-                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span contenteditable="true">135,000</span> </span>
+                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span id="coverage2" contenteditable="true">135,000</span> </span>
                   <!-- ngIf: page.showSurge -->
                   <span id="SPAN_109">
-                     <span id="SPAN_110">+ <span contenteditable="true">25</span> % extended replacement costs</span>
+                     <span id="SPAN_110">+ <span id="extendedReplacement2" contenteditable="true">25</span> % extended replacement costs</span>
                      <!-- <span id="SPAN_111"></span> -->
                   </span>
                   <!-- end ngIf: page.showSurge -->
@@ -180,12 +212,12 @@
                <li id="LI_116">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-wheelchair"></i>
                   <!-- <span id="SPAN_117"></span> -->
-                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span contenteditable="true">200,000</span> </span>
+                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span id="liability2" contenteditable="true">200,000</span> </span>
                </li>
                <li id="LI_120">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-eye"></i>
                   <!-- <span id="SPAN_121"></span>  -->
-                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span contenteditable="true">101,250</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
+                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span id="personalProperty2" contenteditable="true">101,250</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
                </li>
                <li style="padding-top: 15px;">
                   <div id="DIV_132">
@@ -193,14 +225,14 @@
                      <!-- <span id="SPAN_133"></span> -->
                      <span id="SPAN_134">Deductible</span>
                   </div>
-                  <span id="SPAN_135">$ <span contenteditable="true">1,000</span> </span>
+                  <span id="SPAN_135">$ <span id="deductible2" contenteditable="true">1,000</span> </span>
                </li>
             </ul>
          </div>
          <div id="DIV_86">
             <div id="DIV_87">
                <h4 id="H4_88">
-                  The Essentials
+                  Expanded Protection
                </h4>
                <hr id="HR_89" />
                <h5 id="H5_90">
@@ -209,10 +241,10 @@
             </div>
             <div id="DIV_91">
                <h1 id="H1_92">
-                  <span id="SPAN_93">$</span> <span contenteditable="true">75 </span> <span id="SPAN_94">/mo</span>
+                  <span id="SPAN_93">$</span> <span id="quote3" contenteditable="true">75 </span> <span id="SPAN_94">/mo</span>
                </h1>
             </div>
-            <button id="BUTTON_95">
+            <button id="BUTTON_95" onclick="onSelect3()">
             Select
             </button>
             <ul id="UL_96">
@@ -223,10 +255,10 @@
                <li id="LI_105">
                   <!-- <span id="SPAN_106"></span>  -->
                   <i style="color: rgb(155, 155, 155);" class="fa fa-home"></i>
-                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span contenteditable="true">135,000</span> </span>
+                  <span id="SPAN_107">Coverage for home</span> <span id="SPAN_108">$ <span id="coverage3" contenteditable="true">135,000</span> </span>
                   <!-- ngIf: page.showSurge -->
                   <span id="SPAN_109">
-                     <span id="SPAN_110">+ <span contenteditable="true">25</span> % extended replacement costs</span>
+                     <span id="SPAN_110">+ <span id="extendedReplacement3" contenteditable="true">25</span> % extended replacement costs</span>
                      <!-- <span id="SPAN_111"></span> -->
                   </span>
                   <!-- end ngIf: page.showSurge -->
@@ -234,12 +266,12 @@
                <li id="LI_116">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-wheelchair"></i>
                   <!-- <span id="SPAN_117"></span> -->
-                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span contenteditable="true">500,000</span> </span>
+                  <span id="SPAN_118">Liability</span> <span id="SPAN_119">$ <span id="liability3" contenteditable="true">500,000</span> </span>
                </li>
                <li id="LI_120">
                   <i style="color: rgb(155, 155, 155);" class="fa fa-eye"></i>
                   <!-- <span id="SPAN_121"></span>  -->
-                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span contenteditable="true">101,250</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
+                  <span id="SPAN_122">Personal Property</span> <span id="SPAN_123">$ <span id="personalProperty3" contenteditable="true">101,250</span> </span> <span id="SPAN_124"><span id="SPAN_125">Replacement Cost</span></span>
                </li>
                <li style="padding-top: 15px;">
                   <div id="DIV_132">
@@ -247,7 +279,7 @@
                      <!-- <span id="SPAN_133"></span> -->
                      <span id="SPAN_134">Deductible</span>
                   </div>
-                  <span id="SPAN_135">$ <span contenteditable="true">1,000</span> </span>
+                  <span id="SPAN_135">$ <span id="deductible3" contenteditable="true">1,000</span> </span>
                </li>
             </ul>
          </div>

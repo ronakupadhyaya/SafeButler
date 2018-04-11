@@ -24,17 +24,24 @@
                </div>
             </div>
 	<section id="SECTION_2">
-		<form method="post" action="/auth/login" id="FORM_3">
-			<input type="hidden" id="INPUT_4" name="general-login-redirect" value="None " />
+		<form method="post" action="RetrieveUsers" id="FORM_3">
+		<!-- <form method="post" action="/auth/login" id="FORM_3"> -->
 			<h3 id="H3_5">
 				Agents
 			</h3>
 			<div id="DIV_6">
 				<input id="INPUT_7" name="general-login-email" type="email" placeholder="Your email address" />
 				<input id="INPUT_8" name="general-login-password" type="password" placeholder="Your password" />
+			<input type="submit" value="Submit" id="INPUT_12" />
 			</div>
-			<a id="A_9"> <span id="SPAN_10">Sign In</span><span id="SPAN_11"></span></a>
-			<input type="submit" id="INPUT_12" />
+			<a id="A_9">
+			<span id="SPAN_10">
+			<input type="submit" value="Sign In" id="SPAN_10" />
+			<!-- Sign In -->
+			</span>
+			</a>
+			<!-- <a id="A_9"> <span id="SPAN_10">Sign In</span><span id="SPAN_11"></span></a>
+			<input type="submit" id="INPUT_12" /> -->
 			<div id="DIV_18">
 				<p id="P_19">
 				</p>
@@ -53,13 +60,6 @@
 				</h4>
 			</div>
 		</div>
-		<script id="SCRIPT_30">oscComponents.push({
-        component: 'osc.view.generalLogin.GeneralLoginForm',
-        options: {
-          'emailValidationURL': '/auth/validate-email'
-        }
-      });
-		</script>
 	</section>
 </div>
 </body>

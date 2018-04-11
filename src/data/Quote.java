@@ -10,6 +10,16 @@ public class Quote {
 	private String personalProperty;
 	private String deductible;
 	
+	public Quote(String option, String price, String coverage, String replacement, String liability, String personalProperty, String deductible) {
+		this.option = option;
+		this.price = price;
+		this.coverage = coverage;
+		this.replacement = replacement;
+		this.liability = liability;
+		this.personalProperty = personalProperty;
+		this.deductible = deductible;
+	}
+	
 	public String getOption() {
 		return option;
 	}

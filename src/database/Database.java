@@ -109,4 +109,12 @@ public class Database {
 		mongoCollection.insertOne(mongoDocument);
 	}
 	
+	public static void removeUser(String name) {
+		connect("mongodb://user:user@ds125255.mlab.com:25255/cs201");
+		
+		MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("users");	
+		Document removeQuery = new Document("name", new Document("$eq", name));
+		mongoCollection.findOneAndDelete(removeQuery);
+	}
+	
 }
