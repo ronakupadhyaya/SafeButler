@@ -2,6 +2,10 @@ package data;
 
 public class Quote {
 
+	private String date;
+	private String time;
+	private String name;
+	
 	private String option;
 	private String price;
 	private String coverage;
@@ -9,6 +13,16 @@ public class Quote {
 	private String liability;
 	private String personalProperty;
 	private String deductible;
+	
+	public Quote() {
+		
+	}
+	
+	public Quote(String date, String time, String price) {
+		this.date = date;
+		this.time = time;
+		this.price = price;
+	}
 	
 	public Quote(String option, String price, String coverage, String replacement, String liability, String personalProperty, String deductible) {
 		this.option = option;
@@ -67,6 +81,30 @@ public class Quote {
 	}
 	public void setDeductible(String deductible) {
 		this.deductible = deductible;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

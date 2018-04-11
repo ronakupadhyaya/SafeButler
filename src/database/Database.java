@@ -9,7 +9,6 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoIterable;
 
 import data.*;
 
@@ -26,7 +25,7 @@ public class Database {
 	} 
 	
 	public static void addUser(User user) {
-		connect("mongodb://user:user@ds125255.mlab.com:25255/cs201");
+		connect("mongodb://user:user@ds121945.mlab.com:21945/safebutler");
 
 		String name = user.getName();
 		String email = user.getEmail();
@@ -59,7 +58,7 @@ public class Database {
 	
 	public static ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
-		connect("mongodb://user:user@ds125255.mlab.com:25255/cs201");
+		connect("mongodb://user:user@ds121945.mlab.com:21945/safebutler");
 		
 		MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("users");
 		MongoCursor<Document> mongoCursor = mongoCollection.find().iterator();
@@ -88,33 +87,56 @@ public class Database {
 	}
 	
 	public static void addQuote(Quote quote) {
-		connect("mongodb://user:user@ds125255.mlab.com:25255/cs201");
+		connect("mongodb://user:user@ds121945.mlab.com:21945/safebutler");
 
-		String option = quote.getOption();
+		String time = quote.getTime();
 		String price = quote.getPrice();
-		String coverage = quote.getCoverage();
-		String replacement = quote.getReplacement();
-		String liability = quote.getLiability();
-		String personalProperty = quote.getPersonalProperty();
-		String deductible = quote.getDeductible();
+		String date = quote.getDate();
 		
 		MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("quotes");
-		Document mongoDocument = new Document("option", option)
+		Document mongoDocument = new Document("time", time)
 									  .append("price", price)
-									  .append("coverage", coverage)
-									  .append("replacement", replacement)
-									  .append("liability", liability)
-									  .append("personalProperty", personalProperty)
-									  .append("deductible", deductible);
+									  .append("date", date);
 		mongoCollection.insertOne(mongoDocument);
 	}
 	
+	public static ArrayList<Quote> getQuotes() {
+		ArrayList<Quote> quotes = new ArrayList<Quote>();
+		connect("mongodb://user:user@ds121945.mlab.com:21945/safebutler");
+		
+		MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("quotes");
+		MongoCursor<Document> mongoCursor = mongoCollection.find().iterator();
+		try {
+			while (mongoCursor.hasNext()) {
+				Document mongoDocument = mongoCursor.next();
+				Quote quote = new Quote();
+				quote.setTime((String)mongoDocument.get("time"));
+				quote.setPrice((String)mongoDocument.get("price"));
+				quote.setDate((String)mongoDocument.get("date"));
+				quotes.add(quote);
+			}
+		} finally {
+			mongoCursor.close();
+		}
+		
+		return quotes;	
+	}
+	
 	public static void removeUser(String name) {
-		connect("mongodb://user:user@ds125255.mlab.com:25255/cs201");
+		connect("mongodb://user:user@ds121945.mlab.com:21945/safebutler");
 		
 		MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("users");	
 		Document removeQuery = new Document("name", new Document("$eq", name));
 		mongoCollection.findOneAndDelete(removeQuery);
+	}
+	
+	public static void main(String[] args) {
+		Quote quote1 = new Quote("4/2018", "620", "54");
+		Quote quote2 = new Quote("4/2018", "625", "54");
+		Quote quote3 = new Quote("4/2018", "5005", "45");
+		addQuote(quote1);
+		addQuote(quote2);
+		addQuote(quote3);
 	}
 	
 }

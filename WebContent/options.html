@@ -8,43 +8,76 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
    	  <script>
+   	 var startTime;
+   	 var endTime;
+   	 
+ 	 function startTime() {
+ 		 console.log("startTime");
+ 	 	startTime = new Date().getTime();
+ 	 }
+ 	 
+ 	 function onSelect(price) {
+ 	 	  endTime = new Date().getTime();
+ 	 	  var time = endTime - startTime;
+ 	 	  
+	 	  var dateObj = new Date();
+	 	  var month = dateObj.getUTCMonth() + 1; //months from 1-12
+	 	  var year = dateObj.getUTCFullYear();
+	 	  
+	 	  console.log(time + " " + month + " " + year + " " + price);
+	 	  
+	 	  /* var xhttp = new XMLHttpRequest();
+	 	  xhttp.open("POST", "/PostQuote?month=" + month +
+	 	  "&year=" + year + "&time=" + time + "&price=" + price, true);
+	 	  xhttp.send(); */
+	 	  
+	 	 $.post("PostQuote", { month: month, year: year, time: time, price: price}, function () {
+	 	});
+ 	 }
+   	  
    	function onSelect1() {
- 		  var quote = $('#quote1').text();
+ 		  var price = $('#quote1').text();
  		  var coverage = $('#coverage1').text();
  		  var extendedReplacement = $('#extendedReplacement1').text();
  		  var liability = $('#liability1').text();
  		  var personalProperty = $('#personalProperty1').text();
  		  var deductible = $('#deductible1').text();
- 		  console.log("onSelect1", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+ 		  
+ 		  onSelect(price);
+ 		  
  	  }
    	
    	  function onSelect2() {
-   		  var quote = $('#quote2').text();
+   		  var price = $('#quote2').text();
    		  var coverage = $('#coverage2').text();
    		  var extendedReplacement = $('#extendedReplacement2').text();
    		  var liability = $('#liability2').text();
    		  var personalProperty = $('#personalProperty2').text();
    		  var deductible = $('#deductible2').text();
-   		  console.log("onSelect2", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+   		  
+   		  onSelect(price);
+   		
    	  }
    	  
    	function onSelect3() {
- 		  var quote = $('#quote3').text();
+ 		  var price = $('#quote3').text();
  		  var coverage = $('#coverage3').text();
  		  var extendedReplacement = $('#extendedReplacement3').text();
  		  var liability = $('#liability3').text();
  		  var personalProperty = $('#personalProperty3').text();
  		  var deductible = $('#deductible3').text();
- 		  console.log("onSelect3", quote, coverage, extendedReplacement, liability, personalProperty, deductible); 
+ 		  
+ 		  onSelect(price);
+ 		  
  	  }
    	  </script>
    </head>
-   <body>
+   <body onload="startTime()">
       <div id="ORIGINAL_DIV_3">
          <div id="ORIGINAL_DIV_4">
             <div id="ORIGINAL_DIV_5">
                <div id="ORIGINAL_DIV_6">
-                  <a><img id="ORIGINAL_SAFEBUTLER" src="images/safebutler.png"></a>
+                  <a href="home.jsp"><img id="ORIGINAL_SAFEBUTLER" src="images/safebutler.png"></a>
                   <div id="ORIGINAL_DIV_9">
                      <!-- <a href="/individuals" id="ORIGINAL_A_10">For You &amp; Family</a><a href="/business" id="ORIGINAL_A_11">For Business</a><a href="/brokers" id="ORIGINAL_A_12">For Agents</a> -->
                   </div>

@@ -413,7 +413,7 @@
     perspective-origin: 560px 3653.5px;
     transform-origin: 560px 3653.5px;
     caret-color: rgb(0, 24, 55);
-    background: rgb(251, 250, 249) none repeat scroll 0% 0% / auto padding-box border-box;
+    /* background: rgb(251, 250, 249) none repeat scroll 0% 0% / auto padding-box border-box; */
     border: 0px none rgb(0, 24, 55);
     font: normal normal 400 normal 14px / 14px "Avenir Next", "Open Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin: 0px 0px 0px 320px;
